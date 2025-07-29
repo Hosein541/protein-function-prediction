@@ -8,10 +8,20 @@ The key finding is nuanced: while the simpler 1D-CNN achieved a slightly higher 
 ---
 
 ## Dataset
-The data was sourced from the [UniProt](https://www.uniprot.org/) database. The dataset consists of protein sequences from the *Saccharomyces cerevisiae* (yeast) organism.
-- **Filtering:** Only reviewed proteins (Swiss-Prot) with experimentally validated GO terms were used.
-- **Labels:** The top 1,000 most frequent GO terms were selected as the target labels for this multi-label classification task.
-- **Final Size:** The final dataset contained 5,947 protein sequences.
+
+The data was sourced from the [UniProt](https://www.uniprot.org/) database and consists of protein sequences from the *Saccharomyces cerevisiae* (yeast) organism.
+
+* **Filtering:** Only reviewed proteins (Swiss-Prot) with experimentally validated GO terms were used.
+* **Labels:** The top 1,000 most frequent GO terms were selected as the target labels.
+* **Final Size:** The final dataset contains 5,947 protein sequences.
+
+### Data File
+The final, pre-processed data used in the notebook is stored in the file: `uniprotkb_reviewed_true_AND_organism_id_2025_07_29.tsv.gz`.
+
+This is a tab-separated file containing the following key columns:
+* **`Entry` / `Entry Name`**: Unique identifiers for the protein.
+* **`Sequence`**: The amino acid sequence.
+* **`Gene Ontology (GO)`**: A text string containing the functional annotations.
 
 ---
 
@@ -36,7 +46,7 @@ The performance of both models was evaluated on a held-out test set.
 
 | Metric                  | Baseline Model (1D-CNN) | Transformer (ESM-2) |
 | :---------------------- | :---------------------- | :-------------------- |
-| **AUC (Micro)** | **0.8015** | 0.8015                | 0.7903
+| **AUC (Micro)** | **0.8015** | 0.8025                | 0.7903
 | **Best F1-Score (Micro)** | 0.2066                  | 0.2033 |
 | **Optimal Threshold** | 0.10            | 0.11                  |
 
