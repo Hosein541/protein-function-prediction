@@ -46,9 +46,9 @@ The performance of both models was evaluated on a held-out test set.
 
 | Metric                  | Baseline Model (1D-CNN) | Transformer (ESM-2) |
 | :---------------------- | :---------------------- | :-------------------- |
-| **AUC (Micro)** | **0.8015** | 0.8025                | 0.7903
+| **AUC (Micro)** | 0.8015               | 0.7903
 | **Best F1-Score (Micro)** | 0.2066                  | 0.2033 |
-| **Optimal Threshold** | 0.10            | 0.11                  |
+| **Optimal Threshold** | 0.15            | 0.12                  |
 
 #### Threshold Optimization Analysis
 
